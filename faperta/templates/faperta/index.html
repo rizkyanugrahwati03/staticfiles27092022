@@ -1,0 +1,18 @@
+    {% block content %}
+    {% load static %}
+    <center>
+        <h1>FAKULTAS PERTANIAN</h1>
+        <img src="\static\img\banner_faperta.jpeg" height="200px">
+    </center>
+        
+    <center>
+        <p>Memiliki 2526 mahasiswa aktif, 102 dosen, 2367 alumni, dan 32 tendik</p>
+    </center>
+
+    <h2>Terdiri dari :</h2>
+    
+    {% for judulfaperta in titlefaperta %}
+        <li>{{ judulfaperta }}</li>
+    
+    {% endfor %}
+    {% endblock %}

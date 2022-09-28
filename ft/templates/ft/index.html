@@ -1,0 +1,19 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    
+    <center>
+        <h1>FAKULTAS TEKNIK</h1>
+        <img src="\static\img\banner_ft.jpeg" height="200px">
+    </center>
+
+    <center>
+        <p>Memiliki 149 dosen, 107 magister, 42 doktor, dan 5 guru besar</p>
+    </center>
+    
+    <h2>Terdiri dari :</h2>
+    
+    {% for judulft in titleft %}
+        <li>{{ judulft }}</li>
+    {% endfor %}
+
+    {% endblock %}

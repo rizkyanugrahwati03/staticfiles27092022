@@ -1,0 +1,19 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    
+    <center>
+        <h1>PASCASARJANA</h1>
+        <img src="\static\img\banner_pascasarjana.jpeg" height="200px">
+    </center>
+
+    <center>
+        <p>Memiliki 471 dosen, 433 magister, 189 doktor, dan 14 guru besar</p>
+    </center>
+    
+    <h2>Terdiri atas :</h2>
+    
+    {% for judulpascasarjana in titlepascasarjana %}
+        <li>{{ judulpascasarjana }}</li>
+    {% endfor %}
+
+    {% endblock %}

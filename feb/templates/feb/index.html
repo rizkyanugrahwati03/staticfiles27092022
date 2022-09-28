@@ -1,0 +1,19 @@
+    {% extends 'base.html' %}
+    {% block content %}
+
+    <center>
+        <h1>FAKULTAS EKONOMI DAN BISNIS</h1>
+        <img src="\static\img\banner_feb.jpeg" height="200px">
+    </center>
+
+    <center>
+        <p>Memiliki 123 dosen, 86 magister, 37 doktor, dan 2 profesor</p>
+    </center>
+
+    <h2>Terdiri dari :</h2>
+    
+    {% for judulfeb in titlefeb %}
+        <li>{{ judulfeb }}</li>
+    {% endfor %}
+
+    {% endblock %}

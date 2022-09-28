@@ -1,0 +1,15 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    
+    <center>
+        <h1>FAKULTAS KEDOKTERAN</h1>
+        <img src="\static\img\banner_fk.jpeg" height="200px">
+    </center>
+
+    <h2>Terdiri dari :</h2>
+    
+    {% for judulfk in titlefk %}
+        <li>{{ judulfk }}</li>
+    {% endfor %}
+
+    {% endblock %}
