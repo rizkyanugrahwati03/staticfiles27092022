@@ -14,6 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+import profile
 from django.contrib import admin
 from django.urls import path 
 from faperta.views import prodi1
@@ -23,7 +24,7 @@ from fisip.views import prodi4
 from fk.views import prodi5
 from fkip.views import prodi6
 from ft.views import prodi7
-from pascasarjana.views import prodi8
+from pascasarjana.views import prodi8 
 from universitas.views import universitas
 
 from . import views

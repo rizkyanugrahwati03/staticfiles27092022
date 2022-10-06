@@ -8,3 +8,17 @@ def prodi7(request):
         'titleft' : judulft,
     }
     return render(request, 'ft/index.html', konteks)
+
+from . models import Dosen, Mahasiswa, Tendik
+
+# Create your views here.
+def prodi7(request):
+    dosen = Dosen.objects.all()
+    tendik = Tendik.objects.all()
+    mahasiswa = Mahasiswa.objects.all()
+    konteks = {
+        'dataDosen': dosen,
+        'dataTendik': tendik,
+        'dataMahasiswa': mahasiswa,
+    }
+    return render(request, 'ft/index.html', konteks)

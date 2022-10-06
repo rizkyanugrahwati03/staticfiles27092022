@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
+    <title>UNIVERSITAS SULTAN AGENG TIRTAYASA</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -22,12 +23,14 @@
         <li><a href="/pascasarjana">PASCASARJANA</a></li>
       </ul>
     </nav>
-</body
-</html>
+    {% block content %}
+    {% endblock %}
+</body>
+</html> 
 
 <style>
     body {
-      background-image: linear-gradient(to right, #FCFFB2, #FCFFB2);
+      background-image: linear-gradient(to right, #eef526, #eef17d);
       margin-left: 50px;
       margin-right: 50px;
       padding: 0;
@@ -41,7 +44,7 @@
       width: 100%;
       box-sizing: border-box;
       background: rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid rgb(68, 223, 250);
   }
   
   .logo {
@@ -50,7 +53,7 @@
       font-size: 36px;
       font-weight: bold;
       text-transform: uppercase;
-      color: white;
+      color: rgb(170, 40, 40);
       padding: 20px 20px;
       justify-content: space-around;
   }
@@ -66,7 +69,7 @@
   nav ul li a {
       font-size: 15px;
       font-weight: bold;
-      color: white;
+      color: rgb(255, 176, 86);
       line-height: 80px;
       text-decoration: none;
       padding: 12px 30px;
@@ -74,6 +77,6 @@
   
   nav ul li a:hover {
       border-radius: 10px;
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(21, 192, 192, 0.445);
   }
   </style>

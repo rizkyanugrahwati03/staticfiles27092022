@@ -1,6 +1,6 @@
-    {% extends 'base.html' %}
+    {% extends 'universitas.html' %}
     {% block content %}
-
+   
     <center>
         <h1>FAKULTAS HUKUM</h1>
         <img src="\static\img\banner_hukum.jpeg" height="200px">
@@ -12,6 +12,82 @@
 
     <h2>Terdiri dari :</h2>
     
+    <h3>Daftar Nama Dosen Fh</h3>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Nama</th>
+            <th>NIP</th>
+            <th>Tanggal Lahir</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+            <th>Email</th>
+            <th>Alamat</th>
+            <th>Photo</th>
+        </tr>
+        {% for dosen in dataDosen %}
+        <tr>
+            <td>{{ dosen.nama }}</td>
+            <td>{{ dosen.NIP }}</td>
+            <td>{{ dosen.tanggal_lahir }}</td>
+            <td>{{ dosen.fakultas }}</td>
+            <td>{{ dosen.prodi }}</td>
+            <td>{{ dosen.email }}</td>
+            <td>{{ dosen.alamat_rumah }}</td>
+            <td><img src="{{ dosen.foto }}" alt="Foto" width="100px"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <h3>Daftar Nama Tendik Fh</h3>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Nama</th>
+            <th>NIP</th>
+            <th>Tanggal Lahir</th>
+            <th>Email</th>
+            <th>Unit</th>
+            <th>Alamat</th>
+            <th>Foto</th>
+        </tr>
+        {% for tendik in dataTendik %}
+        <tr>
+            <td>{{ tendik.nama }}</td>
+            <td>{{ tendik.nip }}</td>
+            <td>{{ tendik.tanggal_lahir }}</td>
+            <td>{{ tendik.email }}</td>
+            <td>{{ tendik.unit }}</td>
+            <td>{{ tendik.alamat }}</td>
+            <td><img src="{{ staff.foto }}" alt="Foto" width="100px"></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>Daftar Nama Mahasiswa Fh</h3>
+    <table class="table table-success table-striped">
+        <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Tanggal Lahir</th>
+            <th>Photo</th>
+            <th>Email</th>
+            <th>Fakultas</th>
+            <th>Prodi</th>
+        </tr>
+        {% for mahasiswa in dataMahasiswa %}
+        <tr>
+            <td>{{ mahasiswa.nama }}</td>
+            <td>{{ mahasiswa.nim }}</td>
+            <td>{{ mahasiswa.tanggal_lahir }}</td>
+            <td><img src="{{ mahasiswa.photo }}" alt="Photo" width="100px"></td>
+            <td>{{ mahasiswa.email }}</td>
+            <td>{{ mahasiswa.fakultas }}</td>
+            <td>{{ mahasiswa.prodi }}</td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+
     {% for judulfh in titlefh %}
         <li>{{ judulfh }}</li>
     {% endfor %}

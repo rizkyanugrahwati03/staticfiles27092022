@@ -9,3 +9,16 @@ def prodi3(request):
         
     }
     return render(request, 'fh/index.html', konteks)
+
+from . models import Dosen, Mahasiswa, Tendik
+# Create your views here.
+def prodi3(request):
+    dosen = Dosen.objects.all()
+    tendik = Tendik.objects.all()
+    mahasiswa = Mahasiswa.objects.all()
+    konteks = {
+        'dataDosen': dosen,
+        'dataTendik': tendik,
+        'dataMahasiswa': mahasiswa,
+    }
+    return render(request, 'fh/index.html', konteks)
