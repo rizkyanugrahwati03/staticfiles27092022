@@ -1,6 +1,7 @@
     {% extends 'universitas.html' %}
 
     {% block content %}
+    
     <center>
         <h1>FAKULTAS PERTANIAN</h1>
         <img src="\static\img\banner_faperta.jpeg" height="200px">
@@ -12,8 +13,17 @@
     
     <h2>Terdiri dari :</h2>
 
-    <h3>Daftar Nama Dosen Faperta</h3>
-        <table class="table table-success table-striped">
+    {% for judulfaperta in titlefaperta %}
+        <li>{{ judulfaperta }}</li>
+
+        {% endfor %}    
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">
+              <thead>
+                <h3>Daftar Nama Dosen Faperta</h3>
             <tr>
                 <th>Nama</th>
                 <th>NIP</th>
@@ -23,10 +33,13 @@
                 <th>Email</th>
                 <th>Alamat</th>
                 <th>Photo</th>
+                <th>Action</th>
             </tr>
-            {% for dosen in dataDosen %}
+              </thead>
+              <tbody>
+                {% for dosen in dataDosen %}
             <tr>
-                <td>{{ dosen.nama }}</td>
+                <td><a href="{% url 'ubah_dosen' dosen.id %}">{{ dosen.nama }}</a></td>
                 <td>{{ dosen.NIP }}</td>
                 <td>{{ dosen.tanggal_lahir }}</td>
                 <td>{{ dosen.fakultas }}</td>
@@ -34,13 +47,23 @@
                 <td>{{ dosen.email }}</td>
                 <td>{{ dosen.alamat_rumah }}</td>
                 <td><img src="{{ dosen.foto }}" alt="Foto" width="100px"></td>
+                <td>
+                    <a href="{& url 'hapus_dosen' dosen.id %}" class="btn btn-danger">Hapus</a>
+                </td>
             </tr>
             {% endfor %}
-        </table>
-    
-    
+              </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped">    
+                <thead>
         <h3>Daftar Nama Tendik Faperta</h3>
-        <table class="table table-success table-striped">
             <tr>
                 <th>Nama</th>
                 <th>NIP</th>
@@ -50,18 +73,29 @@
                 <th>Alamat</th>
                 <th>Foto</th>
             </tr>
+                </thead>
+                <tbody>
             {% for tendik in dataTendik %}
             <tr>
-                <td>{{ tendik.nama }}</td>
+                <td><a href="{% url 'ubah_tendik' tendik.id %}">{{ tendik.nama }}</a></td>
                 <td>{{ tendik.nip }}</td>
                 <td>{{ tendik.tanggal_lahir }}</td>
                 <td>{{ tendik.email }}</td>
                 <td>{{ tendik.unit }}</td>
                 <td>{{ tendik.alamat }}</td>
                 <td><img src="{{ staff.foto }}" alt="Foto" width="100px"></td>
+                <td>
+                    <a href="{& url 'hapus_tendik' tendik.id %}" class="btn btn-danger">Hapus</a>
+                </td>
             </tr>
             {% endfor %}
+            </tbody>
         </table>
+    </div>
+</div>
+</div>
+   
+        
     
         <h3>Daftar Nama Mahasiswa Faperta</h3>
         <table class="table table-success table-striped">
@@ -82,18 +116,12 @@
                 <td><img src="{{ mahasiswa.photo }}" alt="Photo" width="100px"></td>
                 <td>{{ mahasiswa.email }}</td>
                 <td>{{ mahasiswa.fakultas }}</td>
-                <td>{{ mahasiswa.prodi }}</td>
-                
+                <td>{{ mahasiswa.prodi }}</td>     
             </tr>
             {% endfor %}
         </table>
-    
-    {% for judulfaperta in titlefaperta %}
-        <li>{{ judulfaperta }}</li>
-    
-    
-    {% endfor %}
+           
+   
     
     {% endblock %}
-
 

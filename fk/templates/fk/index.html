@@ -8,6 +8,10 @@
 
     <h2>Terdiri dari :</h2>
 
+    {% for judulfk in titlefk %}
+    <li>{{ judulfk }}</li>
+        {% endfor %}
+
     <h3>Daftar Nama Dosen Fk</h3>
     <table class="table table-success table-striped">
         <tr>
@@ -33,6 +37,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Dosen Fk</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Dosen</button>
+
+    </form>
 
     <h3>Daftar Nama Tendik Fk</h3>
     <table class="table table-success table-striped">
@@ -57,6 +69,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Tendik Fk</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Tendik</button>
+
+    </form>
 
     <h3>Daftar Nama Mahasiswa Fk</h3>
     <table class="table table-success table-striped">
@@ -82,9 +102,13 @@
         </tr>
         {% endfor %}
     </table>
-    
-    {% for judulfk in titlefk %}
-        <li>{{ judulfk }}</li>
-    {% endfor %}
+    <h4>Form untuk Menambahkan Data Mahasiswa Fk</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Mahasiswa</button>
+
+    </form>
 
     {% endblock %}

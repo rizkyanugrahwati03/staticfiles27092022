@@ -17,7 +17,7 @@ Including another URLconf
 import profile
 from django.contrib import admin
 from django.urls import path 
-from faperta.views import prodi1
+from faperta.views import *
 from feb.views import prodi2
 from fh.views import prodi3
 from fisip.views import prodi4
@@ -26,12 +26,12 @@ from fkip.views import prodi6
 from ft.views import prodi7
 from pascasarjana.views import prodi8 
 from universitas.views import universitas
-
 from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('faperta/', prodi1),
+    path('faperta/', prodi1, name='faperta'),
     path('feb/', prodi2),
     path('fh/', prodi3),
     path('fisip/', prodi4),
@@ -41,4 +41,13 @@ urlpatterns = [
     path('pascasarjana/', prodi8),
     path('universitas/', universitas),
     path('', views.index),
+    path('tambah-dosen/', tambah_dosen),
+    path('dosen/ubah/<int:id_dosen>', ubah_dosen, name='ubah_dosen'),
+    path('dosen/hapus/<int:id_dosen>', hapus_dosen, name='hapus_dosen'),
+    path('tambah-tendik/', tambah_tendik),
+    path('tendik/ubah/<int:id_tendik>', ubah_tendik, name='ubah_tendik'),
+    path('tendik/hapus/<int:id_tendik>', hapus_tendik, name='hapus_tendik'),
+    path('tambah-mahasiswa/', tambah_mahasiswa),
+    
+   
 ]

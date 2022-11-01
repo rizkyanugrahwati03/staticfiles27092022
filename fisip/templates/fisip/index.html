@@ -12,6 +12,10 @@
     
     <h2>Terdiri dari :</h2>
 
+    {% for judulfisip in titlefisip %}
+     <li>{{ judulfisip }}</li>
+    {% endfor %}
+
     <h3>Daftar Nama Dosen Fisip</h3>
     <table class="table table-success table-striped">
         <tr>
@@ -37,6 +41,15 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Dosen Fisip</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Dosen</button>
+
+    </form>
+
 
     <h3>Daftar Nama Tendik Fisip</h3>
     <table class="table table-success table-striped">
@@ -61,6 +74,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Tendik Fisip</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Tendik</button>
+
+    </form>
     
     <h3>Daftar Nama Mahasiswa Fisip</h3>
     <table class="table table-success table-striped">
@@ -86,9 +107,13 @@
         </tr>
         {% endfor %}
     </table>
-    
-    {% for judulfisip in titlefisip %}
-     <li>{{ judulfisip }}</li>
-    {% endfor %}
+    <h4>Form untuk Menambahkan Data Mahasiswa Fisip</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Mahasiswa</button>
+
+    </form>
 
     {% endblock %}

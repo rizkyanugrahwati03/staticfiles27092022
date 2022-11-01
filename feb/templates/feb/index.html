@@ -1,6 +1,6 @@
     {% extends 'universitas.html' %}
+
     {% block content %}
-    
     <center>
         <h1>FAKULTAS EKONOMI DAN BISNIS</h1>
         <img src="\static\img\banner_feb.jpeg" height="200px">
@@ -11,7 +11,11 @@
     </center>
 
     <h2>Terdiri dari :</h2>
-    
+
+    {% for judulfeb in titlefeb %}
+        <li>{{ judulfeb }}</li>
+
+    {% endfor %}
     
     <h3>Daftar Nama Dosen Feb</h3>
     <table class="table table-success table-striped">
@@ -38,6 +42,15 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Dosen Feb</h4>
+        <form action="" method="post">
+
+            {{ form.as_p }}
+
+            <button>Tambah Data Dosen</button>
+    
+        </form>
+    
 
 
     <h3>Daftar Nama Tendik Feb</h3>
@@ -63,6 +76,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Tendik Feb</h4>
+        <form action="" method="post">
+
+            {{ form.as_p }}
+
+            <button>Tambah Data Tendik</button>
+    
+        </form>
 
     <h3>Daftar Nama Mahasiswa Feb</h3>
     <table class="table table-success table-striped">
@@ -88,9 +109,13 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Mahasiswa Feb</h4>
+        <form action="" method="post">
 
-    {% for judulfeb in titlefeb %}
-        <li>{{ judulfeb }}</li>
-    {% endfor %}
+            {{ form.as_p }}
+
+            <button>Tambah Data Mahasiswa</button>
+    
+        </form>
 
     {% endblock %}

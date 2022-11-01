@@ -12,6 +12,10 @@
     
     <h2>Terdiri dari :</h2>
 
+    {% for judulft in titleft %}
+        <li>{{ judulft }}</li>
+    {% endfor %}
+
     <h3>Daftar Nama Dosen Ft</h3>
     <table class="table table-success table-striped">
         <tr>
@@ -37,6 +41,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Dosen Ft</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Dosen</button>
+
+    </form>
 
     <h3>Daftar Nama Tendik Ft</h3>
     <table class="table table-success table-striped">
@@ -61,6 +73,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Tendik Ft</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Tendik</button>
+
+    </form>
 
     <h3>Daftar Nama Mahasiswa Ft</h3>
     <table class="table table-success table-striped">
@@ -86,9 +106,13 @@
         </tr>
         {% endfor %}
     </table>
-    
-    {% for judulft in titleft %}
-        <li>{{ judulft }}</li>
-    {% endfor %}
+    <h4>Form untuk Menambahkan Data Mahasiswa Ft</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Mahasiswa</button>
+
+    </form>
 
     {% endblock %}

@@ -12,6 +12,10 @@
     
     <h2>Terdiri atas :</h2>
 
+    {% for judulpascasarjana in titlepascasarjana %}
+        <li>{{ judulpascasarjana }}</li>
+    {% endfor %}
+
     <h3>Daftar Nama Dosen Pascasarjana</h3>
     <table class="table table-success table-striped">
         <tr>
@@ -37,6 +41,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Dosen Pascasarjana</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Dosen</button>
+
+    </form>
 
 
     <h3>Daftar Nama Tendik Pascasarjana</h3>
@@ -62,6 +74,14 @@
         </tr>
         {% endfor %}
     </table>
+    <h4>Form untuk Menambahkan Data Tendik Pascasarjana</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Tendik</button>
+
+    </form>
 
     <h3>Daftar Nama Mahasiswa Pascasarjana</h3>
     <table class="table table-success table-striped">
@@ -87,10 +107,13 @@
         </tr>
         {% endfor %}
     </table>
-    
-    
-    {% for judulpascasarjana in titlepascasarjana %}
-        <li>{{ judulpascasarjana }}</li>
-    {% endfor %}
+    <h4>Form untuk Menambahkan Data Mahasiswa Pascasarjana</h4>
+    <form action="" method="post">
+
+        {{ form.as_p }}
+
+        <button>Tambah Data Mahasiswa</button>
+
+    </form>
 
     {% endblock %}
